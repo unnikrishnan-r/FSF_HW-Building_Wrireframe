@@ -75,6 +75,7 @@ Also floating to right and matching BG, font colors , height and margin with sec
 .aside {
     clear: right;
     overflow: auto;
+    display:block;
     width: 445px;
     background: #ebebeb;
     color: black;
