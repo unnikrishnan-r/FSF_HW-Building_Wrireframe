@@ -1,63 +1,84 @@
+/* Common Properties for the page*/
 
- * {
+* {
     box-sizing: border-box;
     text-align: center;
     margin: 0;
-  
-  }
-  
+}
 
-body{
+/*Default style for the body
+Since content is limited to 960px, left and right auto margins are used to 
+keep the content in the middle of the page*/
+
+body {
     background-color: #777;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-    color:white;
-    width:960px;
-    font-size: 18px;   
-    margin-left:auto;
+    width: 960px;
+    font-size: 18px;
+    margin-left: auto;
     margin-right: auto;
 }
 
-header{
-text-align: center;
-border: dotted 2px red;
-margin-bottom: 10px;
-}
+/* Style for Header*/
 
-section{
-background: #ebebeb;
-border: dotted 2px red;
-color:black;
-padding: 25px;
-margin-bottom: 25px;
-}
-
-.main-section{
-    float:left;
-    width:57.5%;
-    float:left;
-    height:300px;
-    margin-right:20px;
-}
-
-.article{
-    width:90%;
-}
-
-.sub-sections{
-    width:inherit;
-}
-
-
-.aside{
-    clear:right;
-    overflow:auto;
-    width:40.3%;
-    border: dotted 2px red;
+header {
     background: #ebebeb;
-    color:black;
-    padding:25px;
-    height: 300px;
-    margin-bottom: 25px;
-
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 15px;
 }
 
+/*Common styles for section, will be overridden as needed*/
+
+section {
+    background: #ebebeb;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+/* Setting height/widthof the main section along with right margin
+   Allowing Aside to stay on the right, hence float property*/
+
+.main-section {
+    float: left;
+    width: 495px;
+    height: 320px;
+    margin-right: 20px;
+}
+
+/*Background and font color of section is overridden here, similarly the box is positioned relative
+to the parent box*/
+
+.article {
+    background-color: #777;
+    color: white;
+    position: relative;
+    top: 30%;
+    padding: 20px;
+}
+
+/*These are child elements of article. So resetting BG and font colors
+Adjusting the position of the boxes as per requirements and reducing bottom margins*/
+
+.sub-sections, .paragraphs {
+    background: #ebebeb;
+    color: black;
+    padding: 15px;
+    position: relative;
+    top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Calculating width: 960 (entire content) - 495 (section width) - 20 (right margin) = 445)
+Also floating to right and matching BG, font colors , height and margin with sections*/
+
+.aside {
+    clear: right;
+    overflow: auto;
+    width: 445px;
+    background: #ebebeb;
+    color: black;
+    padding: 25px;
+    height: 320px;
+    margin-bottom: 25px;
+}
